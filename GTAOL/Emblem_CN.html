@@ -969,7 +969,7 @@
 				var _svgData = btoa(this.svg.getSVG().outerHTML);
 				var _layerData = btoa(JSON.stringify(this.layers));
 				//	Create the request.
-				var _consoleCode = '// Generated with EmblemHelper v1.1 \n\n';
+				var _consoleCode = '// EmblemHelper v1.2 CN \n\n';
 				_consoleCode += 'var svgData = "' + _svgData + '";\n\n';
 				_consoleCode += 'var layerData = "' + _layerData + '";\n\n';
 				_consoleCode += 'var request = new XMLHttpRequest;request.open("POST","/emblems/save",!0),request.onreadystatechange=function(){if(request.readyState==XMLHttpRequest.DONE){var a=JSON.parse(request.responseText);200==a.Status?window.location.href="https://socialclub.rockstargames.com/emblems/edit/"+a.EmblemId:a.Message?alert(a.Message):alert(a.Error.Message)}},request.setRequestHeader("Content-Type","application/json"),request.setRequestHeader("__RequestVerificationToken",document.getElementsByName("__RequestVerificationToken")[0].value),request.setRequestHeader("X-Requested-With","XMLHttpRequest"),request.send(JSON.stringify({"crewId":"0","emblemId":"","parentId":"","svgData":svgData,"layerData": layerData,"hash":document.getElementById("editorField-hash").value}));';
